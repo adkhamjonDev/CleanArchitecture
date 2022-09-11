@@ -22,6 +22,9 @@ object Dependencies {
     object Lifecycle {
         const val lifecycle_runtime_ktx =
             "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle_runtime_ktx_version}"
+        const val lifecycle_viewmodel_ktx =
+            "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle_runtime_ktx_version}"
+
     }
 
     object Test {
@@ -36,8 +39,35 @@ object Dependencies {
         const val dagger_hilt = "com.google.dagger:hilt-android:${Versions.dagger_hilt}"
         const val dagger_hilt_android_compiler =
             "com.google.dagger:hilt-android-compiler:${Versions.dagger_hilt}"
-        const val dagger_hilt_viewmodel = "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
-        const val dagger_hilt_compiler = "androidx.hilt:hilt-compiler:1.0.0"
-        const val dagger_hilt_navigation = "androidx.hilt:hilt-navigation-compose:1.0.0"
+        const val dagger_hilt_viewmodel =
+            "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hilt_lifecycle_viewmodel}"
+        const val dagger_hilt_compiler = "androidx.hilt:hilt-compiler:${Versions.hilt_compiler}"
+        const val dagger_hilt_navigation =
+            "androidx.hilt:hilt-navigation-compose:${Versions.hilt_navigation_compose}"
+    }
+
+    object Retrofit {
+        const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+        const val gson_converter =
+            "com.squareup.retrofit2:converter-gson:${Versions.gson_converter}"
+        const val okhttp = "com.squareup.okhttp3:okhttp:${Versions.okhttp}"
+        const val logging_interceptor =
+            "com.squareup.okhttp3:logging-interceptor:${Versions.logging_interceptor}"
+    }
+
+    object Coroutines {
+        const val coroutines_core =
+            "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines_core}"
+        const val coroutines_android =
+            "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines_android}"
+    }
+
+    object Coil {
+        const val coil = "io.coil-kt:coil-compose:${Versions.coil}"
+    }
+
+    object Chucker {
+        const val chucker = "com.github.chuckerteam.chucker:library:${Versions.chucker}"
+        const val chucker_no_op = "com.github.chuckerteam.chucker:library:${Versions.chucker_no_op}"
     }
 }
