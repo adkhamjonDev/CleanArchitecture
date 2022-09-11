@@ -1,5 +1,8 @@
 buildscript {
 
+    dependencies {
+        classpath(Plugins.dagger_hilt)
+    }
 }
 plugins {
     id(Plugins.android_application) version Plugins.android_application_version apply false
@@ -7,6 +10,6 @@ plugins {
     id(Plugins.jetbrains_kotlin_android) version Plugins.jetbrains_kotlin_android_version apply false
 }
 
-//task clean(type: Delete) {
-//    delete rootProject.buildDir
-//}
+tasks.register("clean", Delete::class) {
+    delete(rootProject.buildDir)
+}

@@ -1,17 +1,18 @@
 plugins {
     id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    id("dagger.hilt.android.plugin")
+    kotlin("kapt")
+    kotlin("android")
 }
-
 android {
-    compileSdk = 32
+    compileSdk = Config.compileSdk
 
     defaultConfig {
-        applicationId = "uz.adkhamjondev.cleanarchitecture"
-        minSdk = 21
-        targetSdk = 32
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = Config.applicationId
+        minSdk = Config.minSdk
+        targetSdk = Config.targetSdk
+        versionCode = Config.versionCode
+        versionName = Config.versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -39,7 +40,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = Dependencies.Compose.compose_version
+        kotlinCompilerExtensionVersion = Versions.compose_version
     }
     packagingOptions {
         resources {
@@ -61,4 +62,12 @@ dependencies {
     androidTestImplementation(Dependencies.Compose.compose_ui_test_junit4)
     debugImplementation(Dependencies.Compose.compose_ui_tooling)
     debugImplementation(Dependencies.Compose.compose_ui_test_manifest)
+
+    //Dagger Hilt
+    implementation(Dependencies.DaggerHilt.dagger_hilt)
+    kapt(Dependencies.DaggerHilt.dagger_hilt_android_compiler)
+    implementation(Dependencies.DaggerHilt.dagger_hilt_viewmodel)
+    kapt(Dependencies.DaggerHilt.dagger_hilt_compiler)
+    implementation(Dependencies.DaggerHilt.dagger_hilt_navigation)
+
 }
