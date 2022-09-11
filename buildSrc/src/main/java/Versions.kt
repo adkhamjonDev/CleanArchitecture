@@ -1,5 +1,5 @@
 object Versions {
-    const val core_ktx_version = "1.9.0"
+    const val core_ktx_version = "1.7.0"
 
     const val compose_version = "1.1.0-beta01"
     const val compose_activity_version = "1.5.1"
