@@ -23,7 +23,6 @@ fun DependencyHandler.coroutines() {
 
 fun DependencyHandler.daggerHilt() {
     add("implementation", Dependencies.DaggerHilt.dagger_hilt)
-    add("implementation", Dependencies.DaggerHilt.dagger_hilt_viewmodel)
     add("implementation", Dependencies.DaggerHilt.dagger_hilt_navigation)
 }
 

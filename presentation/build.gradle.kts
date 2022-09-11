@@ -63,6 +63,8 @@ dependencies {
     androidTestImplementation(Dependencies.Compose.compose_ui_test_junit4)
     debugImplementation(Dependencies.Compose.compose_ui_tooling)
     debugImplementation(Dependencies.Compose.compose_ui_test_manifest)
+    implementation(project(":domain"))
+    implementation(project(":data"))
 
     //Dagger Hilt
     kapt(Dependencies.DaggerHilt.dagger_hilt_android_compiler)

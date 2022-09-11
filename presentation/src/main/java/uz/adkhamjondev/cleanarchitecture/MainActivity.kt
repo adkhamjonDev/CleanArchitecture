@@ -10,34 +10,39 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import dagger.hilt.android.AndroidEntryPoint
+import uz.adkhamjondev.cleanarchitecture.ui.screens.Screen
+import uz.adkhamjondev.cleanarchitecture.ui.screens.user_details.UserDetailScreen
+import uz.adkhamjondev.cleanarchitecture.ui.screens.user_list.UsersScreen
 import uz.adkhamjondev.cleanarchitecture.ui.theme.CleanArchitectureTheme
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             CleanArchitectureTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
+                val navController = rememberNavController()
+                NavHost(
+                    navController = navController,
+                    startDestination = Screen.UsersScreen.route
                 ) {
-                    Greeting("Android")
+                    composable(
+                        route = Screen.UsersScreen.route
+                    ) {
+                        UsersScreen(navController = navController)
+                    }
+                    composable(
+                        route = Screen.UserDetailScreen.route + "/{login}"
+                    ) { entry ->
+                        val login = entry.arguments?.getString("login")
+                        UserDetailScreen(login = login)
+                    }
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    CleanArchitectureTheme {
-        Greeting("Android")
     }
 }
