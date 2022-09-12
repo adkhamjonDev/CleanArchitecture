@@ -1,8 +1,9 @@
 # CleanArchitecture
 Clean Architecture
 
-MVVM
-Dagger Hilt
-Coroutines
-Retrofit
-Jetpack Compose
+#MVVM
+#Dagger Hilt
+#Kotlin Coroutines
+#Kotlin Flow
+#Retrofit
+#Jetpack Compose
